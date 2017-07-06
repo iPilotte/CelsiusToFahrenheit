@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "C2F",
+  "name": "Celsius To Fahrenheit",
   "icons": [
     {
       "src": "favicon.ico",

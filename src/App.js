@@ -11,7 +11,23 @@ class App extends Component {
   }
 
   changeCeltoFah(i){
-    console.log(this.refs.Celsius.value)
+    const Celsius = this.refs.CelsiusText;
+    const Fahrenheit = this.refs.FahrenheitText;
+    if(isNaN(parseFloat(Celsius.value))){
+      Fahrenheit.value = '';
+      return;
+    }
+    Fahrenheit.value = ((parseFloat(Celsius.value) * (9/5)) + 32).toFixed(2);
+  }
+  
+  changeFahtoCel(i){
+    const Fahrenheit = this.refs.FahrenheitText;
+    const Celsius = this.refs.CelsiusText;
+    if(isNaN(parseFloat(Fahrenheit.value))){
+      Celsius.value = '';
+      return;
+    }
+    Celsius.value = ((parseFloat(Fahrenheit.value)-32) * 5/9).toFixed(2);
   }
 
   render() {
@@ -25,12 +41,12 @@ class App extends Component {
               <form className="form-horizontal">
                 <div className="form-group">
                   <label>Celsius
-                    <input type="text" ref="Celsius" className="form-control" onChange={() => this.changeCeltoFah()}/>
+                    <input type="text" ref="CelsiusText" className="form-control" onChange={() => this.changeCeltoFah()}/>
                   </label>
                 </div>
                 <div className="form-group">
                   <label>Fahrenheit
-                    <input type="text" className="form-control"/>
+                    <input type="text" ref="FahrenheitText" className="form-control" onChange={() => this.changeFahtoCel()}/>
                   </label>
                 </div>
               </form>
