@@ -41,12 +41,12 @@ class App extends Component {
               <form className="form-horizontal">
                 <div className="form-group">
                   <label>Celsius
-                    <input type="text" ref="CelsiusText" className="form-control" autoFocus onChange={() => this.changeCeltoFah()}/>
+                    <input type="number" ref="CelsiusText" className="form-control" autoFocus onChange={() => this.changeCeltoFah()}/>
                   </label>
                 </div>
                 <div className="form-group">
                   <label>Fahrenheit
-                    <input type="text" ref="FahrenheitText" className="form-control" onChange={() => this.changeFahtoCel()}/>
+                    <input type="number" ref="FahrenheitText" className="form-control" onChange={() => this.changeFahtoCel()}/>
                   </label>
                 </div>
               </form>
