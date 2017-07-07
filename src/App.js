@@ -17,7 +17,15 @@ class App extends Component {
       Fahrenheit.value = '';
       return;
     }
-    Fahrenheit.value = ((parseFloat(Celsius.value) * (9/5)) + 32).toFixed(2);
+    let decimal = 2;
+    if(parseFloat(Celsius.value).toString().split('.')[1] !== undefined)
+    {
+       decimal = parseFloat(Celsius.value).toString().split('.')[1].length || 0;
+    }
+    if(decimal < 2){
+      decimal = 2;
+    }
+    Fahrenheit.value = ((parseFloat(Celsius.value) * (9/5)) + 32).toFixed(decimal);
   }
   
   changeFahtoCel(i){
@@ -27,7 +35,15 @@ class App extends Component {
       Celsius.value = '';
       return;
     }
-    Celsius.value = ((parseFloat(Fahrenheit.value)-32) * 5/9).toFixed(2);
+    let decimal = 2;
+    if(parseFloat(Fahrenheit.value).toString().split('.')[1] !== undefined)
+    {
+       decimal = parseFloat(Fahrenheit.value).toString().split('.')[1].length || 0;
+    }
+    if(decimal < 2){
+      decimal = 2;
+    }
+    Celsius.value = ((parseFloat(Fahrenheit.value)-32) * 5/9).toFixed(decimal);
   }
 
   render() {
