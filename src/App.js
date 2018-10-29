@@ -67,7 +67,7 @@ class App extends Component {
                 </div>
               </form>
               <hr/>
-              <h4>Thanks</h4>
+              <h4>--</h4>
             </div>
           </div>
         </div>
