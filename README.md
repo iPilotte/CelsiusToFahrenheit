@@ -1,2 +1,2 @@
-*Celsius To Fahrenheit*
-React
+## Celsius To Fahrenheit
+### Using React
